@@ -4,12 +4,12 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Alert from './components/Alert';
 import Textform from './components/Textform';
-// import About from './components/About';
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route,
-// } from "react-router-dom";
+import About from './components/About';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 function App() {
  const[mode,setmode]=useState("light");
  const[navtext,setnavtext]=useState("Enable Dark Mode");
@@ -53,19 +53,19 @@ function App() {
    }
  }
   return (
-    // <Router>
+    <Router>
    <>
    <Navbar title="Text Analyzer" mode={mode} togglemode={togglemode} text={navtext} />
    <Alert alert={alert}/>
    <div className="container my-3">
-   {/* <Routes>
+   <Routes>
             <Route exact path="/about" element={<About />} />
             <Route exact path="/" element={<Textform tarea={tarea} showAlert={showAlert} />} />
-          </Routes> */}
-   <Textform tarea={tarea} showAlert={showAlert} />
+          </Routes>
+   
    </div>
    </>
-  //  </Router>
+   </Router>
   );
 }
 export default App;
